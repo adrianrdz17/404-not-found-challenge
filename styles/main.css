@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    font-style: normal;
+    font-family: "Space Mono", monospace;
+}
+
+.container {
+    width: 90%;
+    max-width: 1440px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: (4, auto);
+
+    grid-template-areas:
+        "header header"
+        "contenido sidebar"
+        "contenido sidebar"
+        "footer footer";
+}
+
+.container > div,
+.container .header,
+.container .footer,
+.container .content {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.container .header {
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+
+    grid-area: header;
+}
+
+.container .content {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+
+    grid-area: contenido;
+}
+
+.container .sidebar {
+    grid-area: sidebar;
+}
+
+.container .footer {
+    flex: 0 0 auto;
+
+    margin-top: 90px;
+    font-family: Consolas;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #bdbdbd;
+    grid-area: footer;
+}
+
+#imagen {
+    width: 80%;
+    height: auto;
+}
+
+#boton {
+    width: 216px;
+    height: 68px;
+    margin-top: 10%;
+
+    background-color: #333;
+    color: white;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+}
+
+#titulo {
+    color: #333;
+    font-weight: bold;
+    font-size: 345%;
+}
+
+#texto {
+    top: 20px;
+    font-size: 125%;
+    color: #4f4f4f;
+
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "contenido contenido"
+            "sidebar sidebar"
+            "footer footer";
+    }
+}
